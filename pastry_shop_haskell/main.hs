@@ -22,6 +22,7 @@ add:: Item -> Item -> Item
 (Beverage n0 cp0 c0) `add` (Beverage n1 cp1 c1) = (Beverage (n0++ "_with_" ++n1) (cp0+cp1) (c0+c1))
 
 data PastryShop = PastryShop {items:: Map String [Item] ,funds:: Float, margin:: Float}
+
 bake_or_brew:: Item -> PastryShop -> PastryShop
 bake_or_brew i ps
     | cost i > funds ps = ps
